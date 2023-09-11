@@ -5,6 +5,7 @@ import connectDB from "./Config/db.js";
 import bodyParser from "body-parser";
 import resturantRouter from "./routes/Resturant.routes.js";
 import FoodRouter from "./routes/Food.route.js";
+import CartRouter from "./routes/Cart.route.js";
 dotenv.config();
 
 //// express
@@ -19,7 +20,8 @@ connectDB();
 
 // router
 app.use("/api/user", resturantRouter);
-app.use("/api/food",FoodRouter)
+app.use("/api/food", FoodRouter);
+app.use("/api/cart", CartRouter);
 app.listen(PORT, "localhost", () => {
   console.log("app started");
 });
